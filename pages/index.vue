@@ -1,46 +1,48 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <card title="Free" icon="github-circle">
-        Open source on
-        <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
-      </card>
-
-      <card title="Responsive" icon="cellphone-link">
-        <b class="has-text-grey">
-          Every
-        </b>
-        component is responsive
-      </card>
-
-      <card title="Modern" icon="alert-decagram">
-        Built with
-        <a href="https://vuejs.org/">
-          Vue.js
-        </a>
-        and
-        <a href="http://bulma.io/">
-          Bulma
-        </a>
-      </card>
-
-      <card title="Lightweight" icon="arrange-bring-to-front">
-        No other internal dependency
-      </card>
+  <section class="main-content columns">
+    <aside class="column is-2 section">
+      <Tags :tags="tags" />
+    </aside>
+    <div class="container column is-10">
+      <section class="section">
+        <h1 class="title">Best talks</h1>
+        <div class="columns is-multiline">
+          <talk
+            v-for="(resource, index) in resources"
+            :key="index"
+            :talk="resource"
+          ></talk>
+        </div>
+      </section>
     </div>
   </section>
 </template>
 
 <script>
-import Card from '~/components/Card'
+import axios from '@nuxtjs/axios';
+import Talk from '~/assets/components/Talk';
+import Tags from '~/assets/components/Tags';
 
 export default {
-  name: 'HomePage',
+  name: 'browse',
 
   components: {
-    Card
+    Talk,
+    Tags
+  },
+
+  async asyncData(context) {
+    try {
+      const { resources } = await context.$axios.$get('./resources.json');
+      const tags = resources.reduce(
+        (tagsAcc, { tags }) => [...tagsAcc, ...tags],
+        []
+      );
+
+      return { resources, tags };
+    } catch {
+      return { resources: [], tags: [] };
+    }
   }
-}
+};
 </script>

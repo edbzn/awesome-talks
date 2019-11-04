@@ -1,0 +1,20 @@
+{
+  "resources": [
+    {
+      "lang": "en",
+      "title": "Talk example",
+      "description": "Talk description",
+      "link": "https://example.com",
+      "poster": "https://www.apicoltura.com/615-home_default/poster-il-mondo-delle-api.jpg",
+      "tags": ["example"],
+      "author": {
+        "name": "John Doe",
+        "profileUrl": "https://twitter.com/johndoe"
+      },
+      "contributor": {
+        "name": "John Doe",
+        "profileUrl": "https://twitter.com/johndoe"
+      }
+    }
+  ]
+}
