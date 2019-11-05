@@ -1,20 +1,24 @@
 <template>
-  <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">Talks-bookish</a>
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
-    <nuxt />
+  <div class="background">
+    <b-navbar type="is-dark" :shadow="true" :mobile-burger="false">
+      <template slot="brand">
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">📖 Talks-bookish</b-navbar-item>
+      </template>
+      <template slot="end">
+        <b-navbar-item tag="div">
+          <a
+            class="button is-primary icon-left"
+            href="https://github.com/Edouardbozon/talks-bookish/edit/master/static/resources.json"
+          >
+            <b-icon icon="plus"></b-icon>
+            <strong>Add resource</strong>
+          </a>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+    <main class="main">
+      <nuxt />
+    </main>
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -25,8 +29,7 @@
           licensed.
           <a
             href="https://github.com/Edouardbozon/talks-bookish/edit/master/static/resources.json"
-            >Add resources</a
-          >
+          >Add resource</a>
           to this list.
         </p>
       </div>
@@ -51,11 +54,14 @@ export default {
 </script>
 
 <style>
-html {
+.background {
   background: #f8f8f8;
 }
 .footer {
   padding: 3rem 1.5rem 3rem;
   background: #eee;
+}
+.main {
+  min-height: calc(100vh - 44px);
 }
 </style>

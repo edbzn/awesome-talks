@@ -5,7 +5,7 @@
     </header>
     <ul class="card-content">
       <li v-for="person in persons" :key="person.name">
-        <a :href="'persons/' + person.name">@{{ person.name }}</a>
+        <nuxt-link :to="'?q=' + person.name">@{{ person.name }}</nuxt-link>
       </li>
     </ul>
   </div>

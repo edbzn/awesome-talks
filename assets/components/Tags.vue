@@ -5,13 +5,9 @@
     </header>
     <div class="card-content">
       <b-taglist>
-        <router-link
-          v-for="(tag, index) in tags"
-          :key="index"
-          :to="'tags/' + tag"
-        >
+        <nuxt-link v-for="(tag, index) in tags" :key="index" :to="'?q=' + tag">
           <b-tag rounded>#{{ tag }}</b-tag>
-        </router-link>
+        </nuxt-link>
       </b-taglist>
     </div>
   </div>

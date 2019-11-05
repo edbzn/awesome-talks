@@ -2,6 +2,7 @@
   <b-field>
     <b-input
       v-model="q"
+      rounded
       placeholder="Search anything..."
       @input="search"
       @change="search"
@@ -26,6 +27,12 @@ export default {
 
   data() {
     return { q: this.query };
+  },
+
+  watch: {
+    query() {
+      this.q = this.query;
+    }
   },
 
   methods: {
