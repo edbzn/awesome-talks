@@ -11,9 +11,10 @@
       <section class="section">
         <div class="container">
           <h1 class="title">📖 Tech talks</h1>
+          <Search :resources="matchResources" :on-search="search" />
           <div class="columns is-multiline" v-if="!error">
             <Talk
-              v-for="(resource, index) in resources"
+              v-for="(resource, index) in matchResources"
               :key="index"
               :talk="resource"
             ></Talk>
@@ -28,17 +29,24 @@
 <script>
 import axios from '@nuxtjs/axios';
 import Talk from '~/assets/components/Talk';
+import Search from '~/assets/components/Search';
 import Tags from '~/assets/components/Tags';
 import Persons from '~/assets/components/Persons';
 import { pick, pickAndSpread } from '~/utils/pick';
+import { deepCompare } from '~/utils/compare';
 
 export default {
   name: 'browse',
 
   components: {
+    Search,
     Talk,
     Persons,
     Tags
+  },
+
+  data() {
+    return { query: '' };
   },
 
   async asyncData(context) {
@@ -56,6 +64,20 @@ export default {
         authors: [],
         error: error.message
       };
+    }
+  },
+
+  computed: {
+    matchResources() {
+      return this.resources.filter((resource) =>
+        deepCompare(resource, this.query)
+      );
+    }
+  },
+
+  methods: {
+    search(query) {
+      this.query = query;
     }
   }
 };
