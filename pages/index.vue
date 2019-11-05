@@ -11,7 +11,7 @@
       <section class="section">
         <div class="container">
           <h1 class="title">📖 Tech talks</h1>
-          <Search :resources="matchResources" :on-search="search" />
+          <Search :query="query" :on-search="search" />
           <div class="columns is-multiline" v-if="!error">
             <Talk
               v-for="(resource, index) in matchResources"
@@ -78,6 +78,13 @@ export default {
   methods: {
     search(query) {
       this.query = query;
+      this.$router.push({ path: this.$route.path, query: { q: query } });
+    }
+  },
+
+  created() {
+    if (this.$route.query.q) {
+      this.query = this.$route.query.q;
     }
   }
 };

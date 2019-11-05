@@ -1,6 +1,7 @@
 <template>
   <b-field>
     <b-input
+      v-model="q"
       placeholder="Search anything..."
       @input="search"
       @change="search"
@@ -13,14 +14,18 @@
 <script>
 export default {
   props: {
-    resources: {
-      type: Array,
+    query: {
+      type: String,
       required: true
     },
     onSearch: {
       type: Function,
       required: true
     }
+  },
+
+  data() {
+    return { q: this.query };
   },
 
   methods: {
