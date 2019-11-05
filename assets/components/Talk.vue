@@ -13,7 +13,7 @@
       </div>
       <div class="card-content">
         <p>{{ talk.description }}</p>
-        <a v-for="(tag, index) in talk.tags" :key="index">#{{ tag }}</a>
+        <a v-for="(tag, index) in talk.tags" :key="index" :href="'tags/' + tag">#{{ tag }}</a>
       </div>
     </div>
   </div>

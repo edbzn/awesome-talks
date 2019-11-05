@@ -5,7 +5,7 @@
     </header>
     <ul class="card-content">
       <li v-for="(tag, index) in tags" :key="index">
-        <a :href="'/#' + tag">#{{ tag }}</a>
+        <a :href="'tags/' + tag">#{{ tag }}</a>
       </li>
     </ul>
   </div>
