@@ -1,8 +1,10 @@
 <template>
-  <div class="column is-one-third-widescreen is-one-quarter-fullhd">
+  <div
+    class="column is-one-mobile is-half-tablet is-half-desktop is-one-third-widescreen"
+  >
     <div class="card">
       <header class="card-header">
-        <div class="card-header-title has-text-grey">{{ talk.title }}</div>
+        <div class="card-header-title">{{ talk.title }}</div>
       </header>
       <div class="card-image">
         <a :href="talk.link" target="_blank" rel="noopener">
@@ -12,8 +14,16 @@
         </a>
       </div>
       <div class="card-content">
+        <b-taglist>
+          <router-link
+            v-for="(tag, index) in talk.tags"
+            :key="index"
+            :to="'tags/' + tag"
+          >
+            <b-tag rounded>#{{ tag }}</b-tag>
+          </router-link>
+        </b-taglist>
         <p>{{ talk.description }}</p>
-        <a v-for="(tag, index) in talk.tags" :key="index" :href="'tags/' + tag">#{{ tag }}</a>
       </div>
     </div>
   </div>
@@ -29,3 +39,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.tags a {
+  margin-right: 4px;
+}
+</style>

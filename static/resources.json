@@ -2,19 +2,131 @@
   "resources": [
     {
       "lang": "en",
-      "title": "Talk example",
-      "description": "Talk description",
-      "link": "https://example.com",
-      "poster": "https://www.apicoltura.com/615-home_default/poster-il-mondo-delle-api.jpg",
-      "tags": ["example"],
-      "author": {
-        "name": "John Doe",
-        "profileUrl": "https://twitter.com/johndoe"
-      },
+      "title": "consectetur culpa anim culpa",
+      "description": "Consectetur Lorem commodo nulla fugiat non qui dolore exercitation pariatur quis adipisicing aliquip. Velit sint reprehenderit consectetur irure nisi adipisicing aliquip sit eu labore irure. Mollit ad do quis in culpa et ad cupidatat consequat exercitation sit.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
       "contributor": {
-        "name": "John Doe",
-        "profileUrl": "https://twitter.com/johndoe"
-      }
+        "name": "Navarro Chavez",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Jeanine Sonia",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["ipsum", "mollit", "sunt", "id", "consequat"]
+    },
+    {
+      "lang": "en",
+      "title": "occaecat laborum ipsum aliquip",
+      "description": "Fugiat magna officia quis quis id Lorem. Duis culpa labore tempor aliqua culpa mollit eiusmod non minim qui reprehenderit est aliqua. Adipisicing aliquip velit ad eu incididunt nostrud consectetur laboris qui eiusmod sint mollit pariatur. Tempor commodo voluptate et minim commodo eiusmod est tempor adipisicing adipisicing pariatur in. Cillum duis aliquip quis eu non nulla. Do dolor irure et cillum esse eiusmod velit minim deserunt veniam minim sunt. Duis non incididunt nulla ipsum dolore fugiat et quis nisi.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Coffey Holly",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Potts Serrano",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["anim", "labore", "incididunt", "labore", "ullamco"]
+    },
+    {
+      "lang": "en",
+      "title": "culpa est ipsum voluptate",
+      "description": "Veniam commodo minim exercitation mollit anim qui duis excepteur. Culpa ad occaecat ex veniam elit ullamco deserunt nulla ullamco sint occaecat mollit. Ipsum reprehenderit labore consequat qui et adipisicing amet nostrud adipisicing excepteur ex dolore pariatur. Nostrud est id ea ut voluptate tempor consequat culpa eiusmod ipsum dolor laboris velit aliquip. Cupidatat officia deserunt excepteur ipsum enim cupidatat. Nisi pariatur labore laborum sit consectetur enim dolor laborum cillum.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Stacie Cobb",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Esperanza Ernestine",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["nulla", "non", "et", "nostrud"]
+    },
+    {
+      "lang": "en",
+      "title": "reprehenderit dolor aliqua dolore",
+      "description": "Reprehenderit aute ea esse ad consequat. Magna excepteur anim ea dolore dolor sit. Aliqua do culpa sunt ex minim nulla fugiat voluptate. Sunt et nulla do sint et reprehenderit velit adipisicing aute. Veniam sint aliquip aliqua duis voluptate aliquip aute laboris. Id enim dolore ut consectetur nulla quis nisi officia occaecat do. Commodo consequat voluptate nulla eiusmod anim in consequat in anim.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Gale Vicky",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Roberts Margarita",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["consequat", "esse", "aliquip", "excepteur"]
+    },
+    {
+      "lang": "en",
+      "title": "exercitation laborum est irure",
+      "description": "Non occaecat ipsum officia qui aute nulla excepteur magna. Mollit ipsum elit exercitation reprehenderit proident culpa Lorem quis sunt. Adipisicing qui adipisicing cillum incididunt tempor qui. Irure consectetur Lorem qui quis. Anim non ex eu qui laborum. Est non anim pariatur sint deserunt veniam sit veniam.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Lee Nannie",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Avis Martina",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["consectetur", "officia", "dolor", "voluptate", "ea"]
+    },
+    {
+      "lang": "en",
+      "title": "laborum occaecat excepteur reprehenderit",
+      "description": "Tempor ipsum enim amet pariatur. Et aliqua incididunt est laboris deserunt fugiat elit. Laboris ad magna consequat tempor nostrud cillum veniam. Cupidatat dolore ullamco elit fugiat irure culpa. Velit et laborum excepteur pariatur sit in. Tempor magna esse anim sit excepteur culpa adipisicing ullamco esse magna. Ut veniam ut sint veniam mollit in duis qui reprehenderit qui.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Jolene Snow",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "May Watson",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["cillum", "laborum", "velit", "amet"]
+    },
+    {
+      "lang": "en",
+      "title": "incididunt velit do consectetur",
+      "description": "Eu dolore laborum proident reprehenderit anim ex sit elit. Sit sit ullamco voluptate sint in exercitation. Amet culpa minim incididunt veniam amet proident et pariatur nulla sint veniam.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Robyn Oconnor",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Kristy Emily",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["minim", "qui", "duis", "pariatur"]
+    },
+    {
+      "lang": "en",
+      "title": "proident ut fugiat in",
+      "description": "Minim do voluptate magna elit in pariatur consectetur irure deserunt ea enim dolore culpa. Reprehenderit proident ut et incididunt. Voluptate culpa fugiat est consectetur elit amet reprehenderit ex pariatur aute eiusmod cupidatat. Occaecat exercitation officia ex exercitation qui. Est pariatur sint id aliqua laboris nulla id nisi ullamco velit ex laboris aliquip. Et minim non consectetur aliqua ea. Nulla eiusmod anim qui adipisicing fugiat irure incididunt elit ad cupidatat et aute et irure.",
+      "poster": "http://placehold.it/200x200",
+      "link": "http://link.com",
+      "contributor": {
+        "name": "Penelope Cole",
+        "profileURL": "https://profile.com"
+      },
+      "author": {
+        "name": "Butler Letitia",
+        "profileURL": "https://profile.com"
+      },
+      "tags": ["id", "anim", "in"]
     }
   ]
 }

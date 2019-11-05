@@ -1,21 +1,25 @@
 <template>
-  <section class="main-content columns">
-    <aside class="column is-2 section">
-      <Tags :tags="tags" />
-      <Persons :persons="authors" type="Authors" />
-      <Persons :persons="contributors" type="Contributors" />
-    </aside>
-    <div class="container column is-10">
+  <section class="columns">
+    <aside class="column aside is-3">
       <section class="section">
-        <h1 class="title">Best talks</h1>
-        <div class="columns is-multiline" v-if="!error">
-          <Talk
-            v-for="(resource, index) in resources"
-            :key="index"
-            :talk="resource"
-          ></Talk>
+        <Tags :tags="tags" />
+        <Persons :persons="authors" type="Authors" />
+        <Persons :persons="contributors" type="Contributors" />
+      </section>
+    </aside>
+    <div class="column">
+      <section class="section">
+        <div class="container">
+          <h1 class="title">📖 Tech talks</h1>
+          <div class="columns is-multiline" v-if="!error">
+            <Talk
+              v-for="(resource, index) in resources"
+              :key="index"
+              :talk="resource"
+            ></Talk>
+          </div>
+          <b-message v-else type="is-danger">{{ error }}</b-message>
         </div>
-        <div v-else>{{ error }}</div>
       </section>
     </div>
   </section>
@@ -56,3 +60,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.aside {
+  max-width: 330px;
+  min-width: 300px;
+}
+</style>

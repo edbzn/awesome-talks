@@ -3,11 +3,17 @@
     <header class="card-header">
       <div class="card-header-title">Tags ({{ tags.length }})</div>
     </header>
-    <ul class="card-content">
-      <li v-for="(tag, index) in tags" :key="index">
-        <a :href="'tags/' + tag">#{{ tag }}</a>
-      </li>
-    </ul>
+    <div class="card-content">
+      <b-taglist>
+        <router-link
+          v-for="(tag, index) in tags"
+          :key="index"
+          :to="'tags/' + tag"
+        >
+          <b-tag rounded>#{{ tag }}</b-tag>
+        </router-link>
+      </b-taglist>
+    </div>
   </div>
 </template>
 
