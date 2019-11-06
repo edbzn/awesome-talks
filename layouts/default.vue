@@ -1,8 +1,10 @@
 <template>
   <div class="background">
-    <b-navbar type="is-dark" :shadow="true" :mobile-burger="false">
+    <b-navbar type="is-dark" transparent shadow>
       <template slot="brand">
-        <b-navbar-item tag="router-link" :to="{ path: '/' }">📖 Talks-bookish</b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }"
+          >📖 Talks-bookish</b-navbar-item
+        >
       </template>
       <template slot="end">
         <b-navbar-item tag="div">
@@ -22,15 +24,12 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Talks-bookish</strong> by
-          <a href="https://twitter.com/edouardbozon">Edouard Bozon</a>. The
-          source code is
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-          licensed.
           <a
             href="https://github.com/Edouardbozon/talks-bookish/edit/master/static/resources.json"
-          >Add resource</a>
-          to this list.
+            >Add resource</a
+          >
+          to this list. Made with ❤️ by
+          <a href="https://twitter/com/edouardbozon">Edouard Bozon</a>.
         </p>
       </div>
     </footer>

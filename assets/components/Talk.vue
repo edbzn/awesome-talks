@@ -1,35 +1,35 @@
 <template>
-  <div class="column is-one-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
+  <div
+    class="column is-one-mobile is-12-tablet is-half-desktop is-half-widescreen is-one-third-fullhd"
+  >
     <div class="card">
       <header class="card-header">
         <div class="card-header-title">{{ talk.title }}</div>
       </header>
       <div class="card-content">
-        <b-taglist>
-          <nuxt-link v-for="(tag, index) in talk.tags" :key="index" :to="'?q=' + tag">
-            <b-tag rounded>#{{ tag }}</b-tag>
-          </nuxt-link>
-        </b-taglist>
-        <p class="credits is-size-7">
-          <span>Speaker</span>
-          <strong>
-            <a :href="talk.author.profileURL">{{ talk.author.name }}</a>
-          </strong>, added by
-          <strong>
-            <a :href="talk.contributor.profileURL">{{ talk.contributor.name }}</a>
-          </strong>.
-        </p>
+        <Tags :tags="tags" />
+        <Credits :author="talk.author" :contributor="talk.contributor" />
         <p>{{ talk.description }}</p>
       </div>
       <div class="card-footer">
-        <a :href="talk.link.profileURL" class="card-footer-item">Watch resource</a>
+        <a :href="talk.link.profileURL" class="card-footer-item"
+          >Watch resource</a
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Tags from '~/assets/components/Tags';
+import Credits from '~/assets/components/Credits';
+
 export default {
+  components: {
+    Tags,
+    Credits
+  },
+
   props: {
     talk: {
       type: Object,

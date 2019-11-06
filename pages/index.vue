@@ -2,36 +2,53 @@
   <section class="columns">
     <aside class="column aside is-3 is-hidden-mobile">
       <section class="section">
-        <Tags :tags="tags" />
-        <Persons :persons="authors" type="Authors" />
-        <Persons :persons="contributors" type="Contributors" />
+        <TagsCard :tags="tags" />
+        <PersonsCard :persons="authors" type="Authors" />
+        <PersonsCard :persons="contributors" type="Contributors" />
       </section>
     </aside>
     <div class="column">
       <section class="section">
         <div class="container">
-          <div class="columns is-vcentered">
-            <div class="column is-one-third">
-              <Search :query="query" :on-search="search" />
-            </div>
-            <div class="column has-text-right is-size-7">
-              <span class="mr">
+          <b-navbar :mobile-burger="false">
+            <template slot="start">
+              <b-navbar-item tag="div">
+                <Search :query="query" :on-search="search" />
+              </b-navbar-item>
+            </template>
+            <template slot="end">
+              <b-navbar-item tag="div">
                 <b-tag
                   v-if="query"
                   rounded
                   type="is-info"
                   closable
+                  attached
                   aria-close-label="Reset search input"
                   @close="reset"
-                >{{ query }}</b-tag>
-              </span>
-              <span v-if="query">{{ matchResources.length }} items found</span>
-              <span v-else>{{ matchResources.length }} items</span>
-            </div>
-          </div>
+                  >{{ query }}</b-tag
+                >
+              </b-navbar-item>
+              <b-navbar-item tag="div">
+                <b-tag rounded type="is-dark" v-if="query"
+                  >{{ matchResources.length }} items found</b-tag
+                >
+                <b-tag rounded type="is-dark" v-else
+                  >{{ matchResources.length }} items</b-tag
+                >
+              </b-navbar-item>
+            </template>
+          </b-navbar>
           <div class="mt columns is-multiline" v-if="!error">
-            <Talk v-for="(resource, index) in matchResources" :key="index" :talk="resource"></Talk>
-            <section class="column hero is-large" v-if="query && matchResources.length === 0">
+            <Talk
+              v-for="(resource, index) in matchResources"
+              :key="index"
+              :talk="resource"
+            ></Talk>
+            <section
+              class="column hero is-large"
+              v-if="query && matchResources.length === 0"
+            >
               <div class="hero-body">
                 <div class="container">
                   <h1 class="title">No match found for "{{ query }}".</h1>
@@ -51,8 +68,8 @@
 import axios from '@nuxtjs/axios';
 import Talk from '~/assets/components/Talk';
 import Search from '~/assets/components/Search';
-import Tags from '~/assets/components/Tags';
-import Persons from '~/assets/components/Persons';
+import TagsCard from '~/assets/components/TagsCard';
+import PersonsCard from '~/assets/components/PersonsCard';
 import { pick, pickAndSpread } from '~/utils/pick';
 import { deepCompare } from '~/utils/compare';
 
@@ -62,8 +79,8 @@ export default {
   components: {
     Search,
     Talk,
-    Persons,
-    Tags
+    TagsCard,
+    PersonsCard
   },
 
   data() {
@@ -131,7 +148,7 @@ export default {
 <style scoped>
 .aside {
   max-width: 330px;
-  min-width: 260px;
+  min-width: 300px;
 }
 .hero {
   text-align: center;
@@ -141,5 +158,8 @@ export default {
 }
 .mr {
   margin-right: 8px;
+}
+.navbar {
+  background: #f8f8f8;
 }
 </style>
