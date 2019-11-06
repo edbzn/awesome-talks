@@ -24,3 +24,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.credits {
+  margin: 14px 0;
+}
+</style>

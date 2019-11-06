@@ -16,28 +16,7 @@
             :resources="matchResources"
             :query="query"
           />
-          <section v-if="!error">
-            <transition-group name="slide-fade" class="mt columns is-multiline">
-              <Talk
-                v-for="resource in matchResources"
-                :key="resource.title"
-                :talk="resource"
-              ></Talk>
-            </transition-group>
-            <section
-              class="column hero is-large"
-              key="no-match"
-              v-if="query && matchResources.length === 0"
-            >
-              <div class="hero-body">
-                <div class="container">
-                  <h1 class="title">No match found for "{{ query }}".</h1>
-                  <h2 class="subtitle">Please try another keyword.</h2>
-                </div>
-              </div>
-            </section>
-          </section>
-          <b-message v-else type="is-danger">{{ error }}</b-message>
+          <TalkList :resources="matchResources" :query="query" :error="error" />
         </div>
       </section>
     </div>
@@ -46,7 +25,7 @@
 
 <script>
 import axios from '@nuxtjs/axios';
-import Talk from '~/assets/components/Talk';
+import TalkList from '~/assets/components/TalkList';
 import SearchBar from '~/assets/components/SearchBar';
 import TagsCard from '~/assets/components/TagsCard';
 import PersonsCard from '~/assets/components/PersonsCard';
@@ -58,7 +37,7 @@ export default {
 
   components: {
     SearchBar,
-    Talk,
+    TalkList,
     TagsCard,
     PersonsCard
   },
@@ -130,16 +109,7 @@ export default {
   max-width: 330px;
   min-width: 300px;
 }
-.hero {
-  text-align: center;
-}
-.mt {
-  margin-top: 8px;
-}
 .mr {
   margin-right: 8px;
-}
-.navbar {
-  background: #f8f8f8;
 }
 </style>

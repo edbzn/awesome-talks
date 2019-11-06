@@ -54,7 +54,4 @@ export default {
   width: 100%;
   bottom: 0;
 }
-.credits {
-  margin: 14px 0;
-}
 </style>

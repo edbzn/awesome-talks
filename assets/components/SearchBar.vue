@@ -20,10 +20,10 @@
         </b-navbar-item>
       </transition>
       <b-navbar-item tag="div">
-        <b-tag rounded type="is-dark"
-          >{{ resources.length }}
-          {{ resources.length > 1 ? 'items' : 'item' }}</b-tag
-        >
+        <b-tag rounded type="is-dark">
+          {{ resources.length }}
+          {{ resources.length > 1 ? 'items' : 'item' }}
+        </b-tag>
       </b-navbar-item>
     </template>
   </b-navbar>
@@ -57,3 +57,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.navbar {
+  background: #f8f8f8;
+}
+</style>
