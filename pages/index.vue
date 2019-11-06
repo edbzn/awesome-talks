@@ -29,7 +29,7 @@ import TalkList from '~/assets/components/TalkList';
 import SearchBar from '~/assets/components/SearchBar';
 import TagsCard from '~/assets/components/TagsCard';
 import PersonsCard from '~/assets/components/PersonsCard';
-import { pick, pickAndSpread } from '~/utils/pick';
+import { pick, pickAndSpread, uniq, distinctBy } from '~/utils/pick';
 import { deepCompare } from '~/utils/compare';
 
 export default {
@@ -49,9 +49,9 @@ export default {
   async asyncData(context) {
     try {
       const { resources } = await context.$axios.$get('./resources.json');
-      const tags = pickAndSpread(resources, 'tags');
-      const authors = pick(resources, 'author');
-      const contributors = pick(resources, 'contributor');
+      const tags = uniq(pickAndSpread(resources, 'tags'));
+      const authors = distinctBy(pick(resources, 'author'), 'name');
+      const contributors = distinctBy(pick(resources, 'contributor'), 'name');
       return { resources, tags, contributors, authors, error: null };
     } catch (error) {
       return {
