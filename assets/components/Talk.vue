@@ -12,7 +12,12 @@
         <p>{{ talk.description }}</p>
       </div>
       <div class="card-footer">
-        <a :href="talk.link.profileURL" class="card-footer-item"
+        <a
+          :href="talk.url"
+          :title="talk.url"
+          target="_blank"
+          rel="noopener"
+          class="card-footer-item"
           >Watch resource</a
         >
       </div>

@@ -2,7 +2,7 @@
   <div class="background">
     <b-navbar type="is-dark" transparent shadow>
       <template slot="brand">
-        <b-navbar-item tag="router-link" :to="{ path: '/' }"
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/' }"
           >📖 Talks-bookish</b-navbar-item
         >
       </template>

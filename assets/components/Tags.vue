@@ -1,6 +1,6 @@
 <template>
   <b-taglist>
-    <nuxt-link v-for="(tag, index) in tags" :key="index" :to="'?q=' + tag">
+    <nuxt-link v-for="tag in tags" :key="tag" :to="'?q=' + tag">
       <b-tag rounded>#{{ tag }}</b-tag>
     </nuxt-link>
   </b-taglist>

@@ -1,0 +1,56 @@
+{
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "lang": { "type": "string" },
+          "description": { "type": "string" },
+          "image": { "type": "string" },
+          "url": { "type": "string" },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "additionalProperties": false
+            }
+          },
+          "contributor": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "profile": { "type": "string" }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+          },
+          "author": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "profile": { "type": "string" }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "author",
+          "url",
+          "lang",
+          "tags",
+          "contributor"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
