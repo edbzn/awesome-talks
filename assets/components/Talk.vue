@@ -7,7 +7,7 @@
         <div class="card-header-title">{{ talk.title }}</div>
       </header>
       <div class="card-content">
-        <Tags :tags="tags" />
+        <Tags :tags="talk.tags" />
         <Credits :author="talk.author" :contributor="talk.contributor" />
         <p>{{ talk.description }}</p>
       </div>

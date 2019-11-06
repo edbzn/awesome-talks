@@ -10,43 +10,23 @@
     <div class="column">
       <section class="section">
         <div class="container">
-          <b-navbar :mobile-burger="false">
-            <template slot="start">
-              <b-navbar-item tag="div">
-                <Search :query="query" :on-search="search" />
-              </b-navbar-item>
-            </template>
-            <template slot="end">
-              <b-navbar-item tag="div">
-                <b-tag
-                  v-if="query"
-                  rounded
-                  type="is-info"
-                  closable
-                  attached
-                  aria-close-label="Reset search input"
-                  @close="reset"
-                  >{{ query }}</b-tag
-                >
-              </b-navbar-item>
-              <b-navbar-item tag="div">
-                <b-tag rounded type="is-dark" v-if="query"
-                  >{{ matchResources.length }} items found</b-tag
-                >
-                <b-tag rounded type="is-dark" v-else
-                  >{{ matchResources.length }} items</b-tag
-                >
-              </b-navbar-item>
-            </template>
-          </b-navbar>
-          <div class="mt columns is-multiline" v-if="!error">
-            <Talk
-              v-for="(resource, index) in matchResources"
-              :key="index"
-              :talk="resource"
-            ></Talk>
+          <SearchBar
+            :on-search="search"
+            :on-reset="reset"
+            :resources="matchResources"
+            :query="query"
+          />
+          <section v-if="!error">
+            <transition-group name="slide-fade" class="mt columns is-multiline">
+              <Talk
+                v-for="resource in matchResources"
+                :key="resource.title"
+                :talk="resource"
+              ></Talk>
+            </transition-group>
             <section
               class="column hero is-large"
+              key="no-match"
               v-if="query && matchResources.length === 0"
             >
               <div class="hero-body">
@@ -56,7 +36,7 @@
                 </div>
               </div>
             </section>
-          </div>
+          </section>
           <b-message v-else type="is-danger">{{ error }}</b-message>
         </div>
       </section>
@@ -67,7 +47,7 @@
 <script>
 import axios from '@nuxtjs/axios';
 import Talk from '~/assets/components/Talk';
-import Search from '~/assets/components/Search';
+import SearchBar from '~/assets/components/SearchBar';
 import TagsCard from '~/assets/components/TagsCard';
 import PersonsCard from '~/assets/components/PersonsCard';
 import { pick, pickAndSpread } from '~/utils/pick';
@@ -77,7 +57,7 @@ export default {
   name: 'browse',
 
   components: {
-    Search,
+    SearchBar,
     Talk,
     TagsCard,
     PersonsCard
