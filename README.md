@@ -4,9 +4,9 @@
 
 ## Add resource
 
-Add your resource at [resources.json](https://github.com/Edouardbozon/awesome-talks/blob/master/assets/resources.json), this can be done directly via the GitHub UI in the browser or you can also fork and clone this project locally.
+Add your resource at [resources.json](https://github.com/Edouardbozon/awesome-talks/blob/master/static/resources.json), this can be done directly via the GitHub UI in the browser or you can also fork and clone this project locally.
 
-Before adding your resource at [resources.json](https://github.com/Edouardbozon/awesome-talks/blob/master/assets/resources.json), please search whether the title of the resource already exists in the file to avoid duplicates. Please make this check before submitting a Pull Request.
+Before adding your resource at [resources.json](https://github.com/Edouardbozon/awesome-talks/blob/master/static/resources.json), please search whether the title of the resource already exists in the file to avoid duplicates. Please make this check before submitting a Pull Request.
 
 > If this is your first time I can recommend [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github) by [Kent C. Dodds](https://kentcdodds.com/).
 
@@ -32,7 +32,7 @@ A resource has to look a certain way, here below you can find an example:
 }
 ```
 
-Or take a look at the [schema](https://github.com/Edouardbozon/awesome-talks/blob/master/src/assets/resources-schema.json).
+Or take a look at the [schema](https://github.com/Edouardbozon/awesome-talks/blob/master/static/resources-schema.json).
 
 ## Build Setup
 
