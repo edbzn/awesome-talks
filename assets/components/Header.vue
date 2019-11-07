@@ -7,7 +7,7 @@
           <div class="hero-body">
             <h1 class="title">Awesome tech talks</h1>
             <h2 class="subtitle">
-              A curated list of web development resources
+              A curated list of free web development resources
             </h2>
           </div>
         </div>

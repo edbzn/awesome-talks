@@ -1,8 +1,8 @@
 {
-  "name": "talks-bookish",
+  "name": "awesome-talks",
   "version": "1.0.0",
-  "description": "Curated list of tech talks.",
-  "author": "Edouard Bozon",
+  "description": "Curated list of free tech talks.",
+  "author": "Edouard Bozon <bozonedouard@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
