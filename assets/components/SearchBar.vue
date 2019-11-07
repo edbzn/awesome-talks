@@ -1,32 +1,27 @@
 <template>
-  <b-navbar :mobile-burger="false">
-    <template slot="start">
-      <b-navbar-item tag="div">
-        <Search :query="query" :on-search="onSearch" />
-      </b-navbar-item>
-    </template>
-    <template slot="end">
-      <transition name="fade">
-        <b-navbar-item tag="div" v-if="query">
-          <b-tag
-            rounded
-            type="is-info"
-            closable
-            attached
-            aria-close-label="Reset search input"
-            @close="onReset"
-            >{{ query }}</b-tag
-          >
-        </b-navbar-item>
-      </transition>
-      <b-navbar-item tag="div">
+  <div class="columns is-vcentered is-mobile">
+    <div class="column">
+      <Search :query="query" :on-search="onSearch" />
+    </div>
+    <div class="column">
+      <b-taglist>
         <b-tag rounded type="is-dark">
           {{ resources.length }}
-          {{ resources.length > 1 ? 'items' : 'item' }}
+          {{ resources.length > 1 ? 'resources' : 'resource' }}
         </b-tag>
-      </b-navbar-item>
-    </template>
-  </b-navbar>
+        <b-tag
+          v-if="query"
+          rounded
+          type="is-info"
+          closable
+          attached
+          aria-close-label="Reset search"
+          @close="onReset"
+          >{{ query }}</b-tag
+        >
+      </b-taglist>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -61,5 +56,8 @@ export default {
 <style scoped>
 .navbar {
   background: #f8f8f8;
+}
+.has-addons {
+  margin-bottom: 0;
 }
 </style>

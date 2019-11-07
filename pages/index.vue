@@ -1,30 +1,38 @@
 <template>
-  <section class="columns">
-    <aside class="column aside is-3 is-hidden-mobile">
-      <section class="section">
-        <TagsCard :tags="tags" />
-        <PersonsCard :persons="authors" type="Authors" />
-        <PersonsCard :persons="contributors" type="Contributors" />
-      </section>
-    </aside>
-    <div class="column">
-      <section class="section">
-        <div class="container">
-          <SearchBar
-            :on-search="search"
-            :on-reset="reset"
-            :resources="matchResources"
-            :query="query"
-          />
-          <TalkList :resources="matchResources" :query="query" :error="error" />
-        </div>
-      </section>
-    </div>
-  </section>
+  <div>
+    <Header />
+    <section class="columns">
+      <aside class="column aside is-3 is-hidden-mobile">
+        <section class="section">
+          <TagsCard :tags="tags" />
+          <PersonsCard :persons="authors" type="Authors" />
+          <PersonsCard :persons="contributors" type="Contributors" />
+        </section>
+      </aside>
+      <div class="column">
+        <section class="section">
+          <div class="container">
+            <SearchBar
+              :on-search="search"
+              :on-reset="reset"
+              :resources="matchResources"
+              :query="query"
+            />
+            <TalkList
+              :resources="matchResources"
+              :query="query"
+              :error="error"
+            />
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
 import axios from '@nuxtjs/axios';
+import Header from '~/assets/components/Header';
 import TalkList from '~/assets/components/TalkList';
 import SearchBar from '~/assets/components/SearchBar';
 import TagsCard from '~/assets/components/TagsCard';
@@ -36,6 +44,7 @@ export default {
   name: 'browse',
 
   components: {
+    Header,
     SearchBar,
     TalkList,
     TagsCard,
@@ -105,10 +114,6 @@ export default {
 </script>
 
 <style scoped>
-.aside {
-  max-width: 330px;
-  min-width: 300px;
-}
 .mr {
   margin-right: 8px;
 }

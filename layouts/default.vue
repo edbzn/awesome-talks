@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <b-navbar type="is-dark" transparent shadow>
+    <b-navbar type="is-dark" transparent>
       <template slot="brand">
         <b-navbar-item tag="nuxt-link" :to="{ path: '/' }"
           >📖 Talks-bookish</b-navbar-item
@@ -28,7 +28,7 @@
             href="https://github.com/Edouardbozon/talks-bookish/edit/master/static/resources.json"
             >Add resource</a
           >
-          to this list. Made with ❤️ by
+          to the list. Made by
           <a href="https://twitter/com/edouardbozon">Edouard Bozon</a>.
         </p>
       </div>
